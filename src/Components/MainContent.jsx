@@ -9,7 +9,9 @@ const MainContent = ({ searchTerm }) => {
   const [hiddencard, setHiddencard] = useState(false)
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_DATABASE_URL}?name_like=${searchTerm}`)
+    fetch(
+      `https://vercel-restful-api3.vercel.app/artists?name_like=${searchTerm}`
+    )
       .then((res) => res.json())
       .then((result) => showDados(result))
   }, [searchTerm])
@@ -23,7 +25,6 @@ const MainContent = ({ searchTerm }) => {
 
   return (
     <div className="playlist-container">
-      {process.env.REACT_APP_DATABASE_URL}
       {searchTerm === '' && (
         <div id="result-playlists">
           <div className="playlist">
