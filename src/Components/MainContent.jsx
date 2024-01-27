@@ -25,14 +25,13 @@ const MainContent = ({ searchTerm }) => {
 
   return (
     <div className="playlist-container">
-      <div id="result-playlists">
+      <div id="result-playlists" className={searchTerm ? 'hidden' : ''}>
         <div className="playlist">
           <div id="greeting">Boa noite</div>
           <h2 className="session">Navegar por todas as seções</h2>
         </div>
 
-        <div
-          className={searchTerm !== '' ? 'hidden' : 'offer__scroll-container'}>
+        <div className="offer__scroll-container">
           <div className="offer__list">
             <section className="offer__list-item">
               <a href="" className="cards">
