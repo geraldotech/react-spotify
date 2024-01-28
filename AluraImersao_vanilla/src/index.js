@@ -5,9 +5,7 @@ const playlistContainer = document.getElementById('result-playlists')
 console.log(playlistContainer)
 
 function requestApi(searchTerm) {
-  fetch(
-    `https://vercel-restful-api3.vercel.app/artists?name_like=${searchTerm}`
-  )
+  fetch(`${process.env.REACT_APP_API}/artists?name_like=${searchTerm}`)
     .then((res) => res.json())
     .then((result) => displayResults(result))
 }
