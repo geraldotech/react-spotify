@@ -9,9 +9,7 @@ const MainContent = ({ searchTerm }) => {
   const [hiddencard, setHiddencard] = useState(false)
 
   useEffect(() => {
-    fetch(
-      `https://vercel-restful-api3.vercel.app/artists?name_like=${searchTerm}`
-    )
+    fetch(`${process.env.REACT_APP_API}/artists?name_like=${searchTerm}`)
       .then((res) => res.json())
       .then((result) => showDados(result))
   }, [searchTerm])
