@@ -3,15 +3,16 @@ import './MainContent.css'
 import ResultArtist from './ResultArtist'
 import { useEffect } from 'react'
 
-const MainContent = ({ searchTerm }) => {
-  // os dados da input que vem do header
-  const [resul, setResul] = useState('')
+const MainContent = ({ searchTerm = '' }) => {
+  // os dados da input from header
+  const [resul, setResul] = useState([])
   const [hiddencard, setHiddencard] = useState(false)
 
   useEffect(() => {
     fetch(`${process.env.REACT_APP_API}/artists?name_like=${searchTerm}`)
       .then((res) => res.json())
       .then((result) => showDados(result))
+      .catch((err) => console.warn(err))
   }, [searchTerm])
 
   // make function state and hidden card
@@ -134,6 +135,7 @@ const MainContent = ({ searchTerm }) => {
           {resul.length > 0 ? (
             resul.map((valu, ind) => (
               <ResultArtist
+                key={ind}
                 nome={valu.name}
                 urlImg={valu.urlImg}
                 hiddenorNot={hiddencard}

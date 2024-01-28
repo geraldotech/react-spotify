@@ -1,6 +1,6 @@
 import React from 'react'
-import './ResultArtist.css'
 import { FaPlay } from 'react-icons/fa'
+import './ResultArtist.css'
 
 const ResultArtist = ({ nome, urlImg, hiddenorNot }) => {
   /* alimentar esse component com o obj da busca do json */

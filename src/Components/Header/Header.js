@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
+import smallRight from '../../assets/icons/small-right.png'
+import smallLeft from '../../assets/icons/small-left.png'
+import search from '../../assets/icons/search.png'
 import './Header.css'
-import smallRight from '../assets/icons/small-right.png'
-import smallLeft from '../assets/icons/small-left.png'
-import search from '../assets/icons/search.png'
 
 const Header = ({ inputValue }) => {
   return (
