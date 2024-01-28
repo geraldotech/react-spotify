@@ -2,8 +2,10 @@ const searchInput = document.getElementById('search-input')
 const resultsArtist = document.querySelector('#result-artist')
 const playlistContainer = document.getElementById('result-playlists')
 
+const BASEAPI = 'https://api-restful-json.vercel.app'
+
 function requestApi(searchTerm) {
-  fetch(`${REACT_APP_API}/artists?name_like=${searchTerm}`)
+  fetch(`${BASEAPI}/artists?name_like=${searchTerm}`)
     .then((res) => res.json())
     .then((result) => displayResults(result))
 }
