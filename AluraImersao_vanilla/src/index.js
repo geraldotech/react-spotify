@@ -2,10 +2,10 @@ const searchInput = document.getElementById('search-input')
 const resultsArtist = document.querySelector('#result-artist')
 const playlistContainer = document.getElementById('result-playlists')
 
-console.log(playlistContainer)
+const APIVALOR = Netlify.env.get('REACT_APP_API')
 
 function requestApi(searchTerm) {
-  fetch(`${process.env.REACT_APP_API}/artists?name_like=${searchTerm}`)
+  fetch(`${APIVALOR}/artists?name_like=${searchTerm}`)
     .then((res) => res.json())
     .then((result) => displayResults(result))
 }
