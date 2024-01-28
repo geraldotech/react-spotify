@@ -4,7 +4,7 @@ import ResultArtist from './ResultArtist'
 import { useEffect } from 'react'
 
 const MainContent = ({ searchTerm }) => {
-  // trazer os dados da input que esta no header
+  // os dados da input que vem do header
   const [resul, setResul] = useState('')
   const [hiddencard, setHiddencard] = useState(false)
 
@@ -20,7 +20,6 @@ const MainContent = ({ searchTerm }) => {
   function showDados(res) {
     setResul(res)
     searchTerm === '' ? setHiddencard(false) : setHiddencard(true)
-    //  res.length == 0 ? setHiddencard(true) : setHiddencard(true)
   }
 
   return (

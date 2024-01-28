@@ -1,17 +1,16 @@
 import './Reset.css'
 import './App.css'
+import './Header/Header.css'
 import Sidebar from './Components/Sidebar'
 import Header from './Header/Header.js'
-import './Header/Header.css'
 import MainContent from './Components/MainContent'
 import Footer from './Components/Footer'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState } from 'react'
 
 function App() {
   const [sendinput, setSendinput] = useState()
-
-  function shadaDados(e) {
+  /* envia os dados da input do Header para o Component Main */
+  function shareDados(e) {
     if (e.target.value === '') {
       setSendinput('')
       return
@@ -22,10 +21,9 @@ function App() {
   return (
     <div>
       <Sidebar />
-      <FontAwesomeIcon icon="fa-brands fa-youtube" />
       <main>
         <div className="main-container">
-          <Header inputValue={shadaDados} />
+          <Header inputValue={shareDados} />
           <MainContent searchTerm={sendinput} />
           <Footer />
         </div>

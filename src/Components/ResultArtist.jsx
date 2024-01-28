@@ -4,7 +4,6 @@ import { FaPlay } from 'react-icons/fa'
 
 const ResultArtist = ({ nome, urlImg, hiddenorNot }) => {
   /* alimentar esse component com o obj da busca do json */
-
   return (
     <>
       {hiddenorNot && (
